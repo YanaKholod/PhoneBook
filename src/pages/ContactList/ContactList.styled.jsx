@@ -6,7 +6,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 
-export const ButtonRedact = styled(Button)`
+export const EditButton = styled(Button)`
   margin-right: 8px;
   margin-left: auto;
 `;
@@ -58,12 +58,12 @@ export const ModalRedact = styled(Modal)`
 
 export const UserIconList = styled(UserOutlined)`
   margin-right: 8px;
-  color: #1677ff;
+  color: #5b0d70;
 `;
 
 export const PhoneiconList = styled(PhoneOutlined)`
   margin: 0 8px;
-  color: #1677ff;
+  color: #5b0d70;
 `;
 
 export const DivName = styled.div`

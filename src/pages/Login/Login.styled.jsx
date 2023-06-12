@@ -11,6 +11,7 @@ export const LogButton = styled(Button)`
   height: 45px;
   margin-bottom: 15px;
   font-size: 18px;
+  background-color: #5b0d70;
 `;
 
 export const UserIcon = styled(MailOutlined)`

@@ -9,7 +9,7 @@ import {
   TitleReg,
 } from './Login.styled';
 
-import { loginization } from 'Redux/Authorization/operations';
+import { logIn } from 'Redux/Authorization/operations';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -18,8 +18,8 @@ export default function Login() {
   const dispatch = useDispatch();
 
   const onFinish = values => {
-    dispatch(loginization(values)); // для відправки даних на сервер
-    form.resetFields(); // для очищення форми
+    dispatch(logIn(values));
+    form.resetFields();
   };
 
   return (
@@ -75,5 +75,3 @@ export default function Login() {
     </section>
   );
 }
-
-// Діма Берестень

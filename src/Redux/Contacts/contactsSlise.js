@@ -3,7 +3,7 @@ import {
   fetchContacts,
   deleteContact,
   addContact,
-  redactContatc,
+  editContact,
 } from './operations';
 
 import { toast } from 'react-toastify';
@@ -63,8 +63,8 @@ const contactSlise = createSlice({
       })
       .addCase(addContact.rejected, handleRejected)
 
-      .addCase(redactContatc.pending, handlePending)
-      .addCase(redactContatc.fulfilled, (state, action) => {
+      .addCase(editContact.pending, handlePending)
+      .addCase(editContact.fulfilled, (state, action) => {
         const index = state.items.findIndex(
           task => task.id === action.payload.id
         );
@@ -73,7 +73,7 @@ const contactSlise = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(redactContatc.rejected, handleRejected)
+      .addCase(editContact.rejected, handleRejected)
       .addCase(logOut.fulfilled, state => {
         state.items = [];
         state.error = null;

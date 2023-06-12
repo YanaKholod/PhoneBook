@@ -1,36 +1,18 @@
-import {
-  Title,
-  HomeUserGroup,
-  Wrap,
-  UnderTitle,
-  HomeLink,
-  Section,
-  HomeEdit,
-  HomePhoneIcon,
-  HomeContactList,
-} from './Home.styled'; // для стилів
+import { Title, UnderTitle, HomeLink, Section } from './Home.styled';
 
 import { useSelector } from 'react-redux';
 
 export default function Home() {
-  const { isLoaggedIn } = useSelector(state => state.auth); // для перевірки чи залогінений користувач
+  const { isLoaggedIn } = useSelector(state => state.auth);
 
   return (
     <Section>
-      <Title>Wellcome to you PhoneBook</Title>
+      <Title>PhoneBook</Title>
 
-      <Wrap>
-        {' '}
-        <HomeEdit /> <HomePhoneIcon />
-        <HomeUserGroup />
-        <HomeContactList />
-      </Wrap>
-
-      {/* якщо користувач не залогінений, то виводимо підказку, якщо залогінений, також виводимо підказку */}
       {!isLoaggedIn ? (
         <UnderTitle>
           Please
-          <HomeLink to="/register">Register</HomeLink>
+          <HomeLink to="/register">SignUp</HomeLink>
           or
           <HomeLink to="/login">Log in</HomeLink>
           to be able to use your PhoneBook
@@ -45,5 +27,3 @@ export default function Home() {
     </Section>
   );
 }
-
-// Діма Берестень

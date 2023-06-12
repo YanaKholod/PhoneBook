@@ -13,8 +13,7 @@ import { UserMenu } from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
 
 export const AppBar = () => {
-  const { isLoaggedIn, isLoading } = useSelector(state => state.auth); // це для того щоб не було редіректу на логін поки не завантажиться токен
-
+  const { isLoaggedIn, isLoading } = useSelector(state => state.auth);
   return (
     <header>
       {isLoading && <Spiner />}
@@ -40,7 +39,7 @@ export const AppBar = () => {
               <>
                 <Link to="/register">
                   <RegIcon />
-                  Register
+                  SignUp
                 </Link>
                 <Link to="/login">
                   <LogInIcon />
@@ -54,5 +53,3 @@ export const AppBar = () => {
     </header>
   );
 };
-
-// Діма Берестень
