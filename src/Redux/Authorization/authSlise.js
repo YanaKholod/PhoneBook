@@ -15,7 +15,7 @@ const handleRejected = (state, action) => {
   toast.error(
     `${action.payload}` === 'Network Error'
       ? `${action.payload}`
-      : 'Something went wrong. Check your data and try again'
+      : 'Something went wrong.'
   );
 };
 
