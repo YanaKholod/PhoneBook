@@ -11,17 +11,12 @@ export default function Home() {
 
       {!isLoaggedIn ? (
         <UnderTitle>
-          Please
           <HomeLink to="/register">SignUp</HomeLink>
-          or
           <HomeLink to="/login">Log in</HomeLink>
-          to be able to use your PhoneBook
         </UnderTitle>
       ) : (
         <UnderTitle>
-          Go to the tab
           <HomeLink to="/contacts">Contacts</HomeLink>
-          and manage your contacts
         </UnderTitle>
       )}
     </Section>
