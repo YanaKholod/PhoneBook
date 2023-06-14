@@ -14,7 +14,19 @@ export const GlobalStyle = createGlobalStyle`
   }
   section {
     padding: 0 15px;
-    width: 1000px;
+    width: 600px;
+    @media screen and  (min-width: 920px){
+      width:900px;
+    }
+    @media screen and  (min-width: 1500px){
+      width: 1300px;
+    }
+    @media screen and  (min-width: 2000px){
+      width: 1800px;
+      padding: 55px 15px;
+
+    }
+
   }
   header {
     border-bottom: 2px solid #6d127b;

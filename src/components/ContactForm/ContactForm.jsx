@@ -48,12 +48,13 @@ export const ContactForm = () => {
       )
     ) {
       alert(`${newContact.name} is already in contact`);
+    } else {
       dispatch(addContact(newContact));
+    }
 
-      if (!loader) {
-        form.resetFields();
-        setOpen(false);
-      }
+    if (!loader) {
+      form.resetFields();
+      setOpen(false);
     }
   };
 
@@ -89,15 +90,15 @@ export const ContactForm = () => {
               {
                 required: true,
                 message: 'Please input Name!',
-                type: 'text',
+                type: 'string',
+              },
+              {
+                pattern: /^[a-zA-Zа-яА-Я]+([' -][a-zA-Zа-яА-Я])?$/,
+                message: 'Invalid Name format!',
               },
             ]}
           >
-            <InputForm
-              prefix={<UserIcon />}
-              placeholder="Name"
-              pattern="^[a-zA-Zа-яА-Я]+([' -][a-zA-Zа-яА-Я])$"
-            />
+            <InputForm prefix={<UserIcon />} placeholder="Name" />
           </FormWrap.Item>
 
           <FormWrap.Item
@@ -106,16 +107,16 @@ export const ContactForm = () => {
               {
                 required: true,
                 message: 'Please input Number!',
-                type: 'phone',
+                type: 'string',
+              },
+              {
+                pattern:
+                  /^\+?\d{1,4}[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
+                message: 'Invalid Number format!',
               },
             ]}
           >
-            <InputForm
-              prefix={<PhoneIcon />}
-              type=""
-              placeholder="Number"
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            />
+            <InputForm prefix={<PhoneIcon />} type="" placeholder="Number" />
           </FormWrap.Item>
 
           <FormWrap.Item>

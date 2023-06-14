@@ -48,5 +48,5 @@ export const ContactIcon = styled(ContactsOutlined)`
 
 export const Container = styled.div`
   padding: 0 15px;
-  width: 1000px;
+  width: 100%;
 `;
