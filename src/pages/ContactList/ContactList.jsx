@@ -84,7 +84,7 @@ export default function Contactlist() {
               <PhoneiconList /> {number}
               <EditButton
                 onClick={() => showModal(name, number, id)}
-                title="Edit contatc"
+                title="Edit contact"
               >
                 Edit
               </EditButton>
@@ -113,6 +113,7 @@ export default function Contactlist() {
               onChange={e => {
                 setSubName(e.target.value);
               }}
+              pattern="^[a-zA-Zа-яА-Я]+([' -][a-zA-Zа-яА-Я])?$"
             />
             <InputForm
               prefix={<PhoneIcon />}
@@ -120,7 +121,7 @@ export default function Contactlist() {
               onChange={e => {
                 setSubNumber(e.target.value);
               }}
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              pattern="\(\d{3}\)\s?\d{3}-\d{4}"
             />
           </ModalRedact>
         </List>
